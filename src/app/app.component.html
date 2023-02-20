@@ -1,9 +1,13 @@
 <h1>{{title}}</h1>
-
-<router-outlet>
   <nav>
     <button mat-menu-item><a [routerLink]="['/sobre-mi']">Sobre mí</a></button>
-    <button mat-menu-item><a [routerLink]="['/tutorial-angular']">Tutorial Angular</a></button>
+    <!-- <button mat-menu-item><a [routerLink]="['/tutorial-angular']">Tutorial Angular</a></button> -->
+    <button mat-menu-item><a [routerLink]="['/heroes']">Tutorial Angular - héroes</a></button>
+    <button mat-menu-item><a [routerLink]="['/dashboard-heroes']">Tutorial Angular - dashboard</a></button>
   </nav>
 
-</router-outlet>
+  <router-outlet></router-outlet>
+  <app-messages></app-messages>
+
+<!--Aquí debería ir app-heroes pero se sustituye por router-outlet-->
+

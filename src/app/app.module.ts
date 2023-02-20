@@ -5,7 +5,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { AboutMeComponent } from './component/about-me/about-me.component';
-import { AppRoutingProviders, routing } from './app.routing';
+//import { AppRoutingProviders, routing } from './app.routing';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
@@ -13,18 +13,23 @@ import { MatButtonModule } from '@angular/material/button';
 import { HeroesComponent } from './component/heroes/heroes.component';
 import {MatInputModule} from '@angular/material/input';
 import { HeroDetailComponent } from './component/hero-detail/hero-detail.component';
+import { MessagesComponent } from './component/messages/messages.component';
+import { DashboardComponent } from './component/dashboard/dashboard.component';
+
 
 @NgModule({
   declarations: [
     AppComponent,
     AboutMeComponent,
     HeroesComponent,
-    HeroDetailComponent
+    HeroDetailComponent,
+    MessagesComponent,
+    DashboardComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    routing,
+    //routing,
     BrowserAnimationsModule,
     MatMenuModule,
     MatSlideToggleModule,
@@ -33,7 +38,7 @@ import { HeroDetailComponent } from './component/hero-detail/hero-detail.compone
     MatInputModule,
   ],
   providers: [
-    AppRoutingProviders,
+    //AppRoutingProviders,
   ],
   bootstrap: [AppComponent]
 })

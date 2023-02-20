@@ -1,20 +1,18 @@
 <div *ngIf="hero">
   <h2>Detalles de {{hero.name | titlecase}}:</h2>
 
-<div>
-  <span>id: </span>{{hero.id}}
-</div>
+  <div>
+    <span>id: {{hero.id}}</span>
+    <span>Nombre: {{hero.name | titlecase}}</span>
+  </div>
 
-<div>
-  <span>Nombre: </span>{{hero.name | titlecase}}
-</div>
+  <div>
+    <mat-form-field>
+      <mat-label for="name">Nombre</mat-label>
+      <input matInput id="name" [(ngModel)]="hero.name" placeholder="Nuevo nombre del héroe/heroína">
+    </mat-form-field>
+  </div>
 
-<div>
-  <mat-form-field>
-    <mat-label for="name">Nombre</mat-label>
-    <input matInput id="name" [(ngModel)]="hero.name" placeholder="Nuevo nombre del héroe/heroína">
-  </mat-form-field>
-</div>
-
+  <button mat-menu-item type="button" (click)="goBack()">Volver</button>
 
 </div>
