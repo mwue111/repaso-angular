@@ -44,4 +44,19 @@ export class HeroesComponent implements OnInit{
   //   this.selectedHero = hero;
   //   this.messageService.add(`Al habla HeroesComponent: se ha seleccionado el héroe/heroína ${hero.id} - ${hero.name}`);
   // }
+
+  add(name: string): void {
+    name = name.trim();
+    if(!name) {return;}
+    this.heroService.addHero({ name } as Hero)
+      .subscribe(hero => {
+        this.heroes.push(hero);
+      });
+  }
+
+  delete(hero: Hero): void {
+    this.heroes = this.heroes.filter(remainHeroes => remainHeroes !== hero);  //deja todos los héroes que no sean el/la eliminado/a.
+    this.heroService.deleteHero(hero.id)
+      .subscribe();
+  }
 }

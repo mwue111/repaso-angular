@@ -1,3 +1,12 @@
+<h2>Añadir nuevo</h2>
+
+<mat-form-field>
+  <mat-label for="new-hero">Nombre</mat-label>
+  <input matInput id="new-hero" #heroName placeholder="Nuevo/a">
+</mat-form-field>
+<br/>
+<button mat-menu-item type="button" class="add-button" (click)="add(heroName.value); heroName.value=''">Añadir</button>
+
 <h2>Héroes</h2>
 
 <ul class="heroes">
@@ -8,11 +17,11 @@
       <span class="name">{{hero.name}}</span>
 
     </button> -->
-
-    <a routerLink="/heroe/{{hero.id}}">
-      <span class="badge">{{hero.id}}</span>
-      <span class="name">{{hero.name}}</span>
+    <a routerLink="/detail/{{hero.id}}">
+      <span class="badge">{{hero.id}}</span> {{hero.name}}
     </a>
+    <button type="button" class="delete" title="delete hero"
+      (click)="delete(hero)">x</button>
   </li>
 </ul>
 

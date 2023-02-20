@@ -1,3 +1,5 @@
+//Sustituye a mock-heroes.ts
+
 import { Injectable } from '@angular/core';
 import { InMemoryDbService } from 'angular-in-memory-web-api';
 import { Hero } from './hero';
@@ -5,7 +7,7 @@ import { Hero } from './hero';
 @Injectable({
   providedIn: 'root'
 })
-export class InMemoryDataService implements InMemoryDataService {
+export class InMemoryDataService implements InMemoryDbService {
 
   createDb(){
     const heroes = [
@@ -19,7 +21,7 @@ export class InMemoryDataService implements InMemoryDataService {
       { id: 19, name: 'Magma' },
       { id: 20, name: 'Tornado' }
     ];
-    return heroes;
+    return {heroes};  //Si no se añaden llaves, salta error 404
   }
 
   genId(heroes: Hero[]): number {

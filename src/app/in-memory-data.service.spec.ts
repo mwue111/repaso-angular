@@ -1,4 +1,3 @@
-//este fichero no se usará en esta rama
 import { TestBed } from '@angular/core/testing';
 
 import { InMemoryDataService } from './in-memory-data.service';

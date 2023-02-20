@@ -10,7 +10,8 @@ import { HeroService } from 'src/app/hero.service';
   styleUrls: ['./hero-detail.component.css']
 })
 export class HeroDetailComponent {
-  @Input() hero?: Hero; // tiene el decorador @Input porque el componente externo HeroesComponent le pasa el héroe seleccionado
+  //@Input() hero?: Hero; // tiene el decorador @Input porque el componente externo HeroesComponent le pasa el héroe seleccionado. Al hacer el routing ya no es necesario.
+  hero: Hero | undefined;
 
   constructor(
     private route: ActivatedRoute,    //info sobre la ruta: para sacar parámetros
@@ -30,5 +31,12 @@ export class HeroDetailComponent {
 
   goBack(){
     this.location.back();
+  }
+
+  save(): void {
+    if(this.hero){
+      this.heroService.updateHero(this.hero)
+        .subscribe(() => this.goBack());
+    }
   }
 }
