@@ -4,25 +4,27 @@
   <mat-label for="new-hero">Nombre</mat-label>
   <input matInput id="new-hero" #heroName placeholder="Nuevo/a">
 </mat-form-field>
-<br/>
 <button mat-menu-item type="button" class="add-button" (click)="add(heroName.value); heroName.value=''">Añadir</button>
 
 <h2>Héroes</h2>
+<div class="div-heroes">
+  <ul class="heroes">
+    <li *ngFor="let hero of heroes">
+      <!-- <button type="button" (click)="onSelect(hero)" [class.selected]="hero === selectedHero">
 
-<ul class="heroes">
-  <li *ngFor="let hero of heroes">
-    <!-- <button type="button" (click)="onSelect(hero)" [class.selected]="hero === selectedHero">
+        <span class="badge">{{hero.id}}</span>
+        <span class="name">{{hero.name}}</span>
 
-      <span class="badge">{{hero.id}}</span>
-      <span class="name">{{hero.name}}</span>
+      </button> -->
+      <a routerLink="/detail/{{hero.id}}">
+        <span class="badge">{{hero.id}}</span>
+        <span class="name">{{hero.name}}</span>
+      </a>
+      <button type="button" class="delete" title="delete hero"
+        (click)="delete(hero)">x</button>
+    </li>
+  </ul>
 
-    </button> -->
-    <a routerLink="/detail/{{hero.id}}">
-      <span class="badge">{{hero.id}}</span> {{hero.name}}
-    </a>
-    <button type="button" class="delete" title="delete hero"
-      (click)="delete(hero)">x</button>
-  </li>
-</ul>
+</div>
 
 <!-- <app-hero-detail [hero]="selectedHero"></app-hero-detail> -->
