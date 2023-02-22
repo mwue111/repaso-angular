@@ -15,8 +15,10 @@ import {MatInputModule} from '@angular/material/input';
 import { HeroDetailComponent } from './component/hero-detail/hero-detail.component';
 import { MessagesComponent } from './component/messages/messages.component';
 import { DashboardComponent } from './component/dashboard/dashboard.component';
-import { AddCategoryComponent } from './component/add-category/add-category.component';
-import { ListCategoryComponent } from './component/list-category/list-category.component';
+
+import { HttpClientModule } from '@angular/common/http';
+import { AddCategoryComponent } from './component/category/add-category/add-category.component';
+import { ListCategoryComponent } from './component/category/list-category/list-category.component';
 
 
 @NgModule({
@@ -40,6 +42,7 @@ import { ListCategoryComponent } from './component/list-category/list-category.c
     MatButtonModule,
     FormsModule,
     MatInputModule,
+    HttpClientModule,
   ],
   providers: [
     //AppRoutingProviders,

@@ -1,0 +1,14 @@
+<table border="1">
+<tr>
+  <th>id</th>
+  <th>Nombre</th>
+  <th>Slug (?)</th>
+</tr>
+<tr *ngFor="let category of listCategories">
+  <td>{{category.id}}</td>
+  <td>{{category.name}}</td>
+  <td>{{category.slug}}</td>
+</tr>
+</table>
+
+<button routerLink="/new">Añadir nueva</button>
