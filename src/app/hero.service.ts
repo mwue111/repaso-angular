@@ -13,11 +13,13 @@ export class HeroService {
     private messageService: MessageService, //Inyección de un servicio dentro de otro servicio, ambos se inyectarán en HeroesComponent.
   ) { }
 
-  // getHeroes(): Hero[] {  //Método para obtener información desde mock-heroes. NO es asíncrono. Sustituido al importar Observable.
+  //Método para obtener información desde mock-heroes. NO es asíncrono. Sustituido al importar Observable.
+  // getHeroes(): Hero[] {
   //   return HEROES;
   // }
 
-  getHeroes(): Observable<Hero[]> { //Asíncrono: of(HEROES) devuelve esto, que a su vez emite un array vacío de tipo Hero.
+  //Asíncrono: of(HEROES) devuelve esto, que a su vez emite un array vacío de tipo Hero.
+  getHeroes(): Observable<Hero[]> {
     const heroes = of(HEROES);
     this.messageService.add('Al habla HeroService: héroes buscados.');  //añade un mensaje
     return heroes;
